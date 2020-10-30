@@ -1,18 +1,18 @@
 @import url('https://fonts.googleapis.com/css?family=Abel|Oswald:700|Yellowtail|Patrick+Hand');
-
+/* base */
 * {
   font-family: times;
 }
-
+/* base */
 body {
   background: #fff;
 }
-
+/* layout */
 nav, article, aside, footer section {
   margin: 0 auto;
   width: 900px;
 }
-
+/* layout */
 nav {
   margin-top: 25px;
 }
