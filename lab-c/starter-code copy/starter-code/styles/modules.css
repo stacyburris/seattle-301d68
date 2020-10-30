@@ -1,0 +1,66 @@
+hr {
+    clear: both;
+    border: 0;
+    height: 13px;
+    background-image: url('../img/hr.png');
+  }
+  input {
+    font-family: 'Patrick Hand', cursive;
+  }
+  /* modules */
+  .recipe {
+    letter-spacing: .1em;
+    font-family: 'Patrick Hand', cursive;
+    color: #666a42;
+    background-image: url("img/list-bg.png");
+    height: 260px;
+    padding: 37px 0 0 60px;
+    margin: 40px 0;
+  }
+  /* modules */
+  .recipe li {
+    float: left;
+    width: 40%;
+    font-size: 1.3em;
+    line-height: 31px;
+  }
+  /* modules */
+  aside {
+    padding-top: 30px;
+    padding-bottom: 60px
+  }
+  /* modules */
+  aside img {
+    float: left;
+  }
+  /* modules */
+  aside h3 {
+    padding-left: 100px;
+    font-size: 1.6em;
+    padding-bottom: 10px;
+    color: #555;
+  }
+  /* modules */
+  aside p {
+    padding-left: 100px;
+    width: 65%;
+    margin: 0;
+    text-indent: 0;
+  
+  }
+  /* modules */
+  aside button {
+    float: right;
+    font-family: 'Abel', sans-serif;
+    text-transform: uppercase;
+    padding: 15px 40px;
+    background: #b8705a;
+    color: #fff;
+    font-size: 1.2em;
+    border: none;
+  }
+  /* modules */
+  section hr {
+    border-bottom: 1px solid #eee;
+    height: 0;
+  }
