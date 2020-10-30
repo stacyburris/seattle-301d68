@@ -6,13 +6,13 @@ const leftImage = document.getElementById('left');
 const centerImage = document.getElementById('center');
 const rightImage = document.getElementById('right');
 
-const allProducts = [];
+let allProducts = [];
 const container = document.getElementById('image_container');
 const viewed = [];
 const labels = [];
 const pics = [leftImage, centerImage, rightImage];
 const list = document.getElementById('productlist');
-const totalClicks = 0;
+let totalClicks = 0;
 const views = [];
 const votes = [];
 
@@ -40,7 +40,7 @@ function displayPics() {
   // PUT YOUR RESPONSE IN THIS COMMENT - This threw an error when changing things from var to let because the variable rando became scoped to the while code block in the displayPics function when things were changed to let. 
   console.log(viewed);
 
-  for (const i = 0; i < 3; i++) {
+  for (let i = 0; i < 3; i++) {
     const temp = viewed.shift();
     pics[i].src = allProducts[temp].path;
     pics[i].id = allProducts[temp].name;
@@ -59,10 +59,10 @@ function handleClick(event) {
     showList();
     makeChart();
   }
-  for (const i = 0; i < names.length; i++) {
+  for (let i = 0; i < names.length; i++) {
     if (event.target.id === allProducts[i].name) {
       allProducts[i].votes += 1;
-      console.log(event.target.id + ' has ' + allProducts[i].votes + ' votes in ' + allProducts[i].views + ' views');
+      console.log(`${event.target.id} has ${allProducts[i].votes} votes in ${allProducts[i].views}views`);
     }
   }
   localStorage.busmall = JSON.stringify(allProducts);
@@ -71,9 +71,9 @@ function handleClick(event) {
 }
 
 function showList() {
-  for (const i = 0; i < allProducts.length; i++) {
+  for (let i = 0; i < allProducts.length; i++) {
     const liEl = document.createElement('li');
-    liEl.textContent = allProducts[i].name + ' has ' + allProducts[i].votes + ' votes in ' + allProducts[i].views + ' views';
+    liEl.textContent = `${allProducts[i].name} has ${allProducts[i].votes} votes in ${allProducts[i].views} views`;
     list.appendChild(liEl);
   }
 }
@@ -83,11 +83,13 @@ function makeChartData() {
     labels.push(product.name);
     votes.push(product.votes);
     views.push(product.views);
+
   });
 }
-
+//debugger
 function makeChart() {
   makeChartData();
+  //console.log(makeChartData);
   const ctx = document.getElementById('chartypants').getContext('2d');
   new Chart(ctx, { //eslint-disable-line
     type: 'bar',
@@ -128,7 +130,7 @@ if (localStorage.busmall) {
   allProducts = JSON.parse(localStorage.busmall);
 } else {
   console.log('There is no local storage data; initialize app by creating instances');
-  for (const i = 0; i < names.length; i++) {
+  for (let i = 0; i < names.length; i++) {
     new Product(names[i]);
   }
 }
